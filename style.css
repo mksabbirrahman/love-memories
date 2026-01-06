@@ -1,0 +1,100 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #03000a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Lock */
+.lock {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lock input, button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  margin: 10px;
+}
+
+button {
+  background: #ff6fae;
+  color: white;
+  cursor: pointer;
+}
+
+/* Parallax layers */
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+.stars {
+  background: radial-gradient(#ffffff33 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: move 120s linear infinite;
+}
+
+.glow {
+  background: radial-gradient(circle at center, #ff7aa244, transparent 70%);
+}
+
+@keyframes move {
+  to { background-position: 2000px 2000px; }
+}
+
+/* Chapters */
+.hidden { display: none; }
+
+main {
+  scroll-behavior: smooth;
+}
+
+.chapter {
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+}
+
+.glass {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(18px);
+  border-radius: 30px;
+  max-width: 800px;
+}
+
+.proposal button {
+  font-size: 1.2rem;
+  padding: 16px 30px;
+}
+
+/* Candle mode */
+body.candle {
+  background: #120700;
+}
+
+body.candle .glow {
+  background: radial-gradient(circle, #ffb34766, transparent 70%);
+}
+
+footer {
+  padding: 40px;
+  opacity: 0.6;
+}

@@ -2,99 +2,102 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #03000a;
-  color: white;
+  font-family: 'Noto Serif Bengali', serif;
+  background: #04000b;
+  color: #fff;
   overflow-x: hidden;
 }
 
-/* Lock */
-.lock {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.lock input, button {
-  padding: 12px 20px;
-  border-radius: 25px;
-  border: none;
-  margin: 10px;
-}
-
-button {
-  background: #ff6fae;
-  color: white;
-  cursor: pointer;
-}
-
-/* Parallax layers */
-.layer {
+/* Vignette */
+body::after {
+  content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(circle, transparent 55%, rgba(0,0,0,0.55));
+  z-index: 999;
 }
 
-.stars {
-  background: radial-gradient(#ffffff33 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: move 120s linear infinite;
+/* Parallax */
+.parallax {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
 }
 
-.glow {
-  background: radial-gradient(circle at center, #ff7aa244, transparent 70%);
+.back {
+  background: radial-gradient(circle at top, #1a0033, #04000b);
 }
 
-@keyframes move {
-  to { background-position: 2000px 2000px; }
+.mid {
+  background: linear-gradient(120deg, #ff7aa218, transparent 60%);
+  animation: aurora 50s linear infinite;
 }
 
-/* Chapters */
-.hidden { display: none; }
-
-main {
-  scroll-behavior: smooth;
+.front {
+  background: radial-gradient(#ffffff10 1px, transparent 1px);
+  background-size: 90px 90px;
+  animation: stars 140s linear infinite;
 }
 
+@keyframes aurora {
+  to { transform: translateX(-400px); }
+}
+
+@keyframes stars {
+  to { background-position: 2400px 2400px; }
+}
+
+/* Sections */
 .chapter {
   min-height: 100vh;
-  padding: 80px 20px;
+  padding: 90px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
+.chapter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero */
 .hero h1 {
-  font-family: 'Playfair Display', serif;
   font-size: 3rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 30px #ff7aa2;
 }
 
+/* Glass */
 .glass {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(18px);
-  border-radius: 30px;
-  max-width: 800px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(22px);
+  border-radius: 34px;
+  max-width: 820px;
+  box-shadow: 0 50px 140px rgba(0,0,0,0.75);
 }
 
+/* Proposal */
 .proposal button {
-  font-size: 1.2rem;
-  padding: 16px 30px;
+  padding: 18px 38px;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  border: none;
+  background: linear-gradient(135deg, #ff6fae, #ff9fbd);
+  color: white;
+  cursor: pointer;
 }
 
-/* Candle mode */
-body.candle {
-  background: #120700;
-}
-
-body.candle .glow {
-  background: radial-gradient(circle, #ffb34766, transparent 70%);
-}
-
+/* Footer */
 footer {
-  padding: 40px;
+  padding: 60px;
+  text-align: center;
   opacity: 0.6;
 }

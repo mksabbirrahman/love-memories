@@ -1,73 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Transcendence ♾️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অতীত, বর্তমান, তুমি ♾️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <!-- Bengali Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- LOCK -->
-<div class="lock" id="lock">
-  <h1>Only One Soul Can Enter</h1>
-  <input id="soul" placeholder="Enter your name">
-  <button onclick="unlock()">Enter</button>
-</div>
+  <!-- Background Layers -->
+  <div class="parallax back"></div>
+  <div class="parallax mid"></div>
+  <div class="parallax front"></div>
 
-<!-- PARALLAX -->
-<div class="layer stars"></div>
-<div class="layer glow"></div>
+  <!-- HERO -->
+  <section class="hero chapter">
+    <h1>সাব্বির & মাহমুদা জান্নাত</h1>
+    <p id="intro"></p>
+    <span class="scroll-hint">আস্তে স্ক্রল করুন</span>
+  </section>
 
-<!-- MAIN -->
-<main id="world" class="hidden">
+  <!-- CHAPTER 1 -->
+  <section class="chapter glass">
+    <h2>প্রথম অধ্যায়</h2>
+    <p>
+      কিছু সম্পর্ক হঠাৎ আসে না।  
+      তারা চুপচাপ ঢুকে পড়ে জীবনে।  
+      ঠিক যেন আগে থেকেই চেনা।
+    </p>
+  </section>
 
-<section class="chapter hero">
-  <h1>Sabbir & Mahmuda Jannat</h1>
-  <p id="type"></p>
-</section>
+  <!-- CHAPTER 2 -->
+  <section class="chapter glass">
+    <h2>দ্বিতীয় অধ্যায়</h2>
+    <p>
+      সময় আমাদের তাড়াহুড়া শেখায়নি।  
+      শেখায়নি নাটক।  
+      শুধু একে অপরের কাছে থাকা।
+    </p>
+  </section>
 
-<section class="chapter glass">
-  <h2>Chapter I — Connection</h2>
-  <p>
-    Two strangers.  
-    One conversation.  
-    Silence stopped feeling empty.
-  </p>
-</section>
+  <!-- CHAPTER 3 -->
+  <section class="chapter glass">
+    <h2>তৃতীয় অধ্যায়</h2>
+    <p>
+      ভালোবাসা নিখুঁত মানুষ খোঁজে না।  
+      খোঁজে উপস্থিতি।  
+      আর তুমি ছিলে।
+    </p>
+  </section>
 
-<section class="chapter glass">
-  <h2>Chapter II — Belonging</h2>
-  <p>
-    Your presence didn’t demand attention.  
-    It simply *fit*.
-  </p>
-</section>
+  <!-- PROPOSAL -->
+  <section class="chapter proposal">
+    <h2>চিরকাল</h2>
+    <button onclick="accept()">আমার পাশে থাকবে?</button>
+    <p id="answer"></p>
+  </section>
 
-<section class="chapter proposal">
-  <h2>Chapter III — Forever</h2>
-  <button onclick="propose()">Will you stay with me?</button>
-</section>
+  <!-- ENDING -->
+  <section class="chapter ending">
+    <p>
+      সব কিছু হারিয়ে গেলেও,  
+      এই সিদ্ধান্তটা যেন থেকে যায়—  
+      আমি তোমাকেই বেছে নিয়েছিলাম।  
+      আজও নেই।
+    </p>
+  </section>
 
-<section class="chapter candle">
-  <h2>Final Promise</h2>
-  <p>
-    Even if the world goes quiet,  
-    I will still choose you.
-  </p>
-  <button onclick="toggleCandle()">🕯 Candle Mode</button>
-</section>
+  <footer>
+    নীরব ভালোবাসায় গড়া ♾️ — সাব্বির হোসেন
+  </footer>
 
-<footer>
-  Beyond time ♾️ by Sabbir Hossen
-</footer>
-
-</main>
-
-<canvas id="fireworks"></canvas>
-
-<script src="script.js"></script>
+  <!-- JS -->
+  <script src="js/script.js"></script>
 </body>
 </html>
